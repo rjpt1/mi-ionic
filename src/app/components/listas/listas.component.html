@@ -1,0 +1,22 @@
+<ion-list color="dark">
+    <ion-item-sliding *ngFor="let item of deseosService.listas | filtroCompletado:terminada" detail color="dark" (click)="listaSeleccionada(item)">
+        <ion-item color="dark">
+            <ion-label>
+                {{item.titulo}}
+            </ion-label>
+            <ion-note slot="end" color="tertiary" *ngIf="item.items.length == 0">No hay elementos</ion-note>
+            <ion-note slot="end" color="tertiary" *ngIf="item.items.length > 1 ">{{item.items.length}} elementos</ion-note>
+            <ion-note slot="end" color="tertiary" *ngIf="item.items.length == 1">{{item.items.length}} elemento</ion-note>
+        </ion-item>
+        <ion-item-options side="start">
+            <ion-item-option (click)="editarLista(item)" color="tertiary">
+                <ion-icon name="create" slot="icon-only"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
+        <ion-item-options side="end">
+            <ion-item-option (click)="borrarLista(item)" color="danger">
+                <ion-icon name="close" slot="icon-only"></ion-icon>
+            </ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-list>

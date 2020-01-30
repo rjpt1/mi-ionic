@@ -1,0 +1,29 @@
+<ion-header no-border>
+    <ion-toolbar color="dark">
+        <ion-title>
+            Pendientes
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+    <app-listas [terminada]="false"></app-listas>
+
+    <!-- <ion-list color="dark">
+        <ion-item *ngFor="let item of listas" detail color="dark" (click)="listaSeleccionada(item)">
+            <ion-label>
+                {{item.titulo}}
+            </ion-label>
+            <ion-note slot="end" color="tertiary" *ngIf="item.items.length == 0">No hay elementos</ion-note>
+            <ion-note slot="end" color="tertiary" *ngIf="item.items.length > 1 ">{{item.items.length}} elementos</ion-note>
+            <ion-note slot="end" color="tertiary" *ngIf="item.items.length == 1">{{item.items.length}} elemento</ion-note>
+        </ion-item>
+    </ion-list> -->
+    <!-- fab placed to the top end -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="tertiary">
+            <ion-icon name="add" (click)="agregarLista()"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>
